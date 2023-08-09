@@ -1,34 +1,35 @@
 <main class="principal">
   <div class="calculadora">
-    <input type="text" name="resultado" id="resultado">
+    <input type="text" [(ngModel)]="resultado" name="resultado" id="resultado"
+    placeholder="Aqui vem a conta" readonly>
     <table class="calculadora__botoes">
       <tr>
-        <td><button class="botao">C</button></td>
-        <td><button class="botao"><</button></td>
-        <td><button class="botao">*</button></td>
-        <td><button class="botao">X</button></td>
+        <td><button class="botao" (click)="limpaInput()">C</button></td>
+        <td><button class="botao" (click)="apagar()"><</button></td>
+        <td><button class="botao" (click)="escreverInput('*')">*</button></td>
+        <td><button class="botao" (click)="escreverInput('/')">/</button></td>
       </tr>
       <tr>
-        <td><button class="botao">7</button></td>
-        <td><button class="botao">8</button></td>
-        <td><button class="botao">9</button></td>
-        <td><button class="botao">-</button></td>
+        <td><button class="botao" (click)="escreverInput('7')">7</button></td>
+        <td><button class="botao" (click)="escreverInput('8')">8</button></td>
+        <td><button class="botao" (click)="escreverInput('9')">9</button></td>
+        <td><button class="botao" (click)="escreverInput('-')">-</button></td>
       </tr>
       <tr>
-        <td><button class="botao">4</button></td>
-        <td><button class="botao">5</button></td>
-        <td><button class="botao">6</button></td>
-        <td><button class="botao">+</button></td>
+        <td><button class="botao" (click)="escreverInput('4')">4</button></td>
+        <td><button class="botao" (click)="escreverInput('5')">5</button></td>
+        <td><button class="botao" (click)="escreverInput('6')">6</button></td>
+        <td><button class="botao" (click)="escreverInput('+')">+</button></td>
       </tr>
       <tr>
-        <td><button class="botao">1</button></td>
-        <td><button class="botao">2</button></td>
-        <td><button class="botao">3</button></td>
-        <td rowspan="2"><button id="botao--igualdade" class="botao">=</button></td>
+        <td><button class="botao" (click)="escreverInput('1')">1</button></td>
+        <td><button class="botao" (click)="escreverInput('2')">2</button></td>
+        <td><button class="botao" (click)="escreverInput('3')">3</button></td>
+        <td rowspan="2"><button id="botao--igualdade" class="botao" (click)="calculaResultado()">=</button></td>
       </tr>
       <tr>
-        <td colspan="2"><button id="botao--zero" class="botao">0</button></td>
-        <td><button class="botao">.</button></td>
+        <td colspan="2"><button id="botao--zero" class="botao" (click)="escreverInput('0')">0</button></td>
+        <td><button class="botao" (click)="escreverInput('.')">.</button></td>
       </tr>
     </table>
   </div>
