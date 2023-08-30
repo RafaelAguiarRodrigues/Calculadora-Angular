@@ -17,6 +17,10 @@
   padding: 0.8em 1em;
 }
 
+#resultado::placeholder {
+  text-align: center;
+}
+
 .calculadora__botoes {
   padding: 1em 0;
 }
